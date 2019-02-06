@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+    <title>City</title>
+  </head>
+
+  <body><center></br></br></br></br>
+	<div class="container">
+	      <div class="row">
+	          <div class="col-md-12">
+	            <div class="card" style="width: 50rem;">
+	                <div class="card-body">
+								    <h1 class="text-danger"> City : <%= @city.name %></h1></br>
+                    <p><b>Gossips</b> <% @gossips.each do |i| %> </p></br>
+                      <%= i.title %>
+                      <%= i.user.first_name %>
+                      <%= link_to "Gossip frère ! Aïïe !", gossip_path(i.id),:class => "btn-info btn p-1"%>
+                      <% end %>
+
+                      <div class="bg-light">
+                    </div>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	      </div>
+	</div>
+  </body></center>
+
+</html>
