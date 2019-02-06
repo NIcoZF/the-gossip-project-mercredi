@@ -68,4 +68,3 @@ end
 30.times do
   join_table_user_private_message = JoinTableUserPrivateMessage.create!(recipient_id:(rand(User.first.id..User.last.id)), private_message_id:(rand(PrivateMessage.first.id..PrivateMessage.last.id)))
 end
-
