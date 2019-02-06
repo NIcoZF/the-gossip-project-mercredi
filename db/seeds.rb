@@ -29,11 +29,11 @@ ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'join_table_user_private_messages'")
 =end
 
-10.times do
+12.times do
   city = City.create!(name: Faker::Address.unique.city)
 end
 
-10.times do
+12.times do
   user = User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, city_id:(rand(City.first.id..City.last.id)), description: Faker::Food.description, age: Faker::Number.number(2), email: Faker::Internet.email)
 end
 
@@ -41,7 +41,7 @@ end
   gossip = Gossip.create!(title: Faker::Book.unique.title, content: Faker::TvShows::Simpsons.quote, user_id:(rand(User.first.id..User.last.id)))
 end
 
-10.times do
+12.times do
   tag = Tag.create!(title: Faker::Music::RockBand.name)
 end
 
