@@ -11,8 +11,10 @@
   </head>
 
   <body>
+
+    <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Gossip</a>
+      <a class="navbar-brand" href="http://localhost:3000">Gossip</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,15 +35,15 @@
       </div>
     </nav>
 
+
     <main role="main" class="container"><center></br>
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bienvenue <%= params[:id] %>!</font></font></h1>
+          <h1 class="display-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bienvenue <%= params[:id] %></font></font></h1>
           <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Voici notre super site de potins, il est chouette, non ? </font></br></br><font style="vertical-align: inherit;">Tu peux les checker si tu veux!.</font></font></p>
         </div>
       </div>
     </main>
-
     <%= yield %>
   </body>
 

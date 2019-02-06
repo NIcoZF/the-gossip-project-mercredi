@@ -5,20 +5,20 @@
   </head>
 
 
-</html>
+
   <body><center>
 
-    <main role="main" class="container"></br>
-
+  <main role="main" class="container"></br>
       <div class="starter-template">
         <p class="lead">Tu peux aussi nous raconter ton ragot ;)!.</p>
       </div>
     <% if flash[:success] %>
-    <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+    <div class="alert alert-success" role="alert"><%= flash[:success] %>
+    </div>
     <% end %>
-
     <a href="/gossips/new" class="btn btn-outline-danger">New</a></br></br>
 
+      <!-- containers gossips -->
       <div class="container">
         <div class="row">
           <% @gossips.each do |gossip| %>
@@ -36,6 +36,6 @@
           <% end %>
         </div>
       </div>
-
-    </main><!-- /.container -->
+    </main>
   </body>
+</html>
