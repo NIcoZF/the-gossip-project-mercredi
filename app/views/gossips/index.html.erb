@@ -8,39 +8,7 @@
 </html>
   <body><center>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Gossip</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-
     <main role="main" class="container"></br>
-
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bienvenue <%= params[:id] %>!</font></font></h1>
-          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Voici notre super site de potins, il est chouette, non ? </font></br></br><font style="vertical-align: inherit;">Tu peux les checker si tu veux!.</font></font></p>
-        </div>
-      </div>
 
       <div class="starter-template">
         <p class="lead">Tu peux aussi nous raconter ton ragot ;)!.</p>
@@ -50,41 +18,24 @@
     <% end %>
 
     <a href="/gossips/new" class="btn btn-outline-danger">New</a></br></br>
-    <div class="container">
-      <div class="row">
-        <% @gossips.each do |gossip| %>
-          <div class="col-md-4">
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;"><center>
-              <div class="card-body">
-                <div class="card-body">
-                  <h5 class="text-info" class="card-title"><%= gossip.user.first_name %></h5>
-                  <p class="card-text"><b><%= gossip.title %></b></p>
-                  <a href="/gossips/<%= gossip.id %>" class="btn btn-outline-danger">Voir plus</a>
-                </div>
-              </div>
-            </div></br>
-          </div>
-        <% end %>
-      </div>
-    </div>
 
+      <div class="container">
+        <div class="row">
+          <% @gossips.each do |gossip| %>
+            <div class="col-md-4">
+              <div class="card text-white bg-dark mb-3" style="width: 18rem;"><center>
+                <div class="card-body">
+                  <div class="card-body">
+                    <h5 class="text-info" class="card-title"><%= gossip.user.first_name %></h5>
+                    <p class="card-text"><b><%= gossip.title %></b></p>
+                    <a href="/gossips/<%= gossip.id %>" class="btn btn-outline-danger">Voir plus</a>
+                  </div>
+                </div>
+              </div></br>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
     </main><!-- /.container -->
   </body>
-
-  <footer class="page-footer font-small bg-dark">
-    </br><div class="text-info" class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" class="text-info"> Made with by Nico & Vincent </a>
-    </div></br>
-  </footer>
-
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>

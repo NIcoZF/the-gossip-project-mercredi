@@ -5,13 +5,13 @@
   </head>
 
   <body><center></br></br></br></br>
-	<div class="container">
+	<div class="container"><center>
 	      <div class="row">
 	          <div class="col-md-12">
 	            <div class="card" style="width: 50rem;">
 	              <div class="bg-light">
 	                <div class="card-body">
-								    <h1 class="text-danger"> Title : <%= @gossip.title %></h1></br>
+								    <h1 class="text-info"> Title : <%= @gossip.title %></h1></br>
 								    <p><b>Author</b> : <a href="/users/<%=@user.id%>"> <%= @gossip.user.first_name%> <%= @gossip.user.last_name%></a></p></br>
 								    <p><b>Content</b> : <%= @gossip.content %></p></br>
 								    <p><b>Created at</b> : <%= @gossip.created_at %></p></br>
@@ -21,6 +21,6 @@
 	          </div>
 	      </div>
 	</div>
-  </body></center>
+  </body></center></br></br></br></br></br></br>
 
 </html>

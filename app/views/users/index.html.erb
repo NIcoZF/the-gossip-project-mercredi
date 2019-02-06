@@ -8,16 +8,16 @@
     <% if flash[:success] %>
     <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
     <% end %>
-    <h1 class="text-danger"><center>Bienvenue <%= params[:id] %> sur notre super 🦉 plateforme de gossips...</h1><center></br>
-    <a href="/gossips/new" class="btn btn-outline-danger">New</a></br></br>
-    <div class="container">
+    <h1 class="text-info"><center>Voici la liste des utilisateurs</h1><center></br>
+
+    <div class="container"><center>
       <div class="row">
         <% @users.each do |user| %>
           <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-              <div class="bg-light">
+            <div class="card text-white bg-dark mb-3" style="width: 18rem;"><center>
+              <div class="card-body">
                 <div class="card-body">
-                  <h5 class="text-warning" class="card-title"><%= user.first_name %></h5>
+                  <h5 class="text-info" class="card-title"><%= user.first_name %></h5>
                   <p class="card-text"><b><%= user.last_name %></b></p>
                   <a href="/gossips/<%= user.id %>" class="btn btn-outline-danger">Voir plus</a>
                 </div>
@@ -28,11 +28,5 @@
       </div>
     </div>
   </body>
-
-  <footer class="page-footer font-small grey">
-    <div class="text-danger" class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" class="text-danger"> Made with ♥ by Noé & Gauthier </a>
-    </div></br>
-  </footer>
 
 </html>
