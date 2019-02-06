@@ -11,10 +11,9 @@
 	            <div class="card" style="width: 50rem;">
 	              <div class="bg-light">
 	                <div class="card-body">
-								    <h1 class="text-danger"> Title : <%= @gossip.title %></h1></br>
-								    <p><b>Author</b> : <a href="/static_pages/authordetails/<%= @user.id %>"><%= @gossip.user.first_name%> <%= @gossip.user.last_name%></a></p></br>
-								    <p><b>Content</b> : <%= @gossip.content %></p></br>
-								    <p><b>Created at</b> : <%= @gossip.created_at %></p></br>
+								    <h1 class="text-danger"> First_name : <%= @user.first_name %></h1></br>
+								    <p><b>Content</b> : <%= @user.last_name %></p></br>
+								    <p><b>Created at</b> : <%= @user.city.name %></p></br>
 	                </div>
 	              </div>
 	            </div>

@@ -7,15 +7,15 @@
 
     <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-      <%= label_tag 'Title' %>
-      <%= text_field_tag 'title', @gossip.title %>
+      <%= label_tag 'First_name' %>
+      <%= text_field_tag 'firs_name', @user.firs_name %>
       <br /> <br />
 
-      <%= label_tag 'Content' %>
-      <%= text_area_tag 'content', @gossip.content %>
+      <%= label_tag 'Last_name' %>
+      <%= text_area_tag 'last_name', @user.last_name %>
       <br /> <br />
 
-      <%= submit_tag "Create Post" %>
+      <%= submit_tag "Create User" %>
 
     <% end %>
 

@@ -1,7 +1,7 @@
 class Gossip < ApplicationRecord
   validates :title,
     presence: true,
-    length: { in: 3..44 }
+    length: { in: 3..440 }
   validates :content, presence: true
 
   belongs_to :user
