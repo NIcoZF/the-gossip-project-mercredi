@@ -8,24 +8,43 @@
       <div class="starter-template"><center></br>
         <p class="lead">Raconte nous tout ;)!.</p>
       </div>
-    <div class="container"><center></br>
 
+    <div class="card border-info m-5">
+      <div class="card-header">
+        <h1>Ajouter un ragot</h1>
+    </div>
       <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-        <%= label_tag 'Title' %>
-        <%= text_field_tag 'title', @gossip.title %>
-        <br /> <br />
 
-        <%= label_tag 'Content' %>
-        <%= text_area_tag 'content', @gossip.content %>
-        <br /> <br />
+  <div class="card-body text-info">
+    <div class="form-group">
+      <%= label_tag 'Titre'%>
+      <%= text_field_tag 'title', @gossip.title, class: "form-control", placeholder: "Le titre de ton ragot" %>
+      <br /> <br />
 
-        <%= submit_tag "Create Post" %>
+      <%= label_tag 'Contenu du potin' %>
+      <%= text_area_tag 'content', @gossip.content, class: "form-control", placeholder: "Ton ragot" %>
+      <br /> <br />
 
+      <%= submit_tag "Create Gossip", class: "btn btn-info" %>
+    <% end %>
+      </div>
+    </div>
+  </div>
+    <% if @gossip.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <p>Nous n'avons pas réussi à créer le ragot pour la (ou les) raison(s) suivante(s) :
+        </p>
+        <ul>
+          <% @gossip.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
       <% end %>
-
-    </div></br></br></br></br></br></br></br></br></br></br>
 
     <!-- ... -->
   </body>
+
+
 </html>
