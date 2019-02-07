@@ -8,7 +8,20 @@
     <% if flash[:success] %>
     <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
     <% end %>
-    <h1 class="text-info"><center>Voici la liste des utilisateurs</h1><center></br>
+
+  <div class="card border-info m-5">
+      <div class="card-header"><center>
+        <h1>Voici la liste des potins</h1>
+
+        <main role="main" class="container"></br>
+      <div class="starter-template">
+        <p class="lead">Tu peux aussi nous raconter ton ragot ;)!.</p>
+      </div>
+    <% if flash[:success] %>
+    <div class="alert alert-success" role="alert"><%= flash[:success] %>
+    </div>
+    <% end %>
+    <a href="/gossips/new" class="btn btn-outline-danger">New</a></br></br>
 
     <div class="container"><center>
       <div class="row">
@@ -25,6 +38,7 @@
             </div></br>
           </div>
         <% end %>
+  </div></br></br>
       </div>
     </div>
   </body>
