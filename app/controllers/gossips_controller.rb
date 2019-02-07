@@ -1,6 +1,4 @@
 class GossipsController < ApplicationController
-  before_action :logged_in_user, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @gossips = Gossip.all
@@ -39,22 +37,5 @@ class GossipsController < ApplicationController
 
   def destroy
   end
-
-  private
-          # Confirms a logged-in user
-        def logged_in_user
-            unless logged_in?
-            store_location
-            flash[:danger] = "Please log in!"
-            redirect_to login_path
-            end
-        end
-
-        # Confirms the correct user
-        def correct_user
-            @post = Post.find(params[:id])
-            user = @post.user
-            redirect_to(root_url) unless (current_user?(user) || current_user.admin?)
-        end
 
 end
