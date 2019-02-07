@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   #get '/static_pages/gossipdetails/:id', to: 'static_pages#gossipdetails'
   #get '/static_pages/authordetails/:id', to: 'static_pages#authordetails'
 
-
-
+  resources :sessions, only: [:new, :create, :destroy]
   resources :cities
   resources :users
 
