@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) # avec xxx qui sont les données obtenues à partir du formulaire
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], description: params[:description], email: params[:email], age: params[:age], password: params[:password], city_id: City.all.sample.id) # avec xxx qui sont les données obtenues à partir du formulaire
 
     if @user.save # essaie de sauvegarder en base @gossip
       # si ça marche, il redirige vers la page d'index du site
@@ -21,7 +21,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
   end
 
   def edit
@@ -37,10 +36,5 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :description, :email, :age, :password_digest, :city)
-  end
 
 end
