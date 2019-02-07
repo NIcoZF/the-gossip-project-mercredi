@@ -1,5 +1,7 @@
 class GossipsController < ApplicationController
 
+before_action :authenticate_user, only: [:create]
+
   def index
     @gossips = Gossip.all
   end
@@ -36,6 +38,15 @@ class GossipsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def authenticate_user
+    if session[:user_id] == nil
+      redirect_to new_session_path
+      flash[:danger] = "Please log in"
+    end
   end
 
 end

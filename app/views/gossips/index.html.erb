@@ -1,12 +1,17 @@
 <html>
 
   <head>
-    <title>Welcome</title>
+    <title>User</title>
   </head>
 
+  <body>
+    <% if flash[:success] %>
+    <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+    <% end %>
 
-
-  <body><center>
+  <div class="card border-info m-5">
+      <div class="card-header"><center>
+        <h1>Voici la liste des Ragots</h1>
 
   <main role="main" class="container"></br>
       <div class="starter-template">
