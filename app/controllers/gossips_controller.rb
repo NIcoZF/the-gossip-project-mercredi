@@ -1,8 +1,10 @@
 class GossipsController < ApplicationController
+  before_action :logged_in_user, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @gossips = Gossip.all
-  end 
+  end
 
   def create
     @gossip = Gossip.new(:user => User.find(10), :title => params[:title], :content => params[:content]) # avec xxx qui sont les données obtenues à partir du formulaire
@@ -21,7 +23,7 @@ class GossipsController < ApplicationController
 
   def new
     @gossip = Gossip.new
-    
+
   end
 
   def edit
@@ -37,5 +39,22 @@ class GossipsController < ApplicationController
 
   def destroy
   end
+
+  private
+          # Confirms a logged-in user
+        def logged_in_user
+            unless logged_in?
+            store_location
+            flash[:danger] = "Please log in!"
+            redirect_to login_path
+            end
+        end
+
+        # Confirms the correct user
+        def correct_user
+            @post = Post.find(params[:id])
+            user = @post.user
+            redirect_to(root_url) unless (current_user?(user) || current_user.admin?)
+        end
 
 end

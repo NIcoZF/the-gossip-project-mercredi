@@ -1,9 +1,11 @@
 class StaticPagesController < ApplicationController
-=begin
-  def welcome
-    @gossips = Gossip.all
+
+  # def welcome
+  #   @gossips = Gossip.all
+  # end
+
+  def home
   end
-=end
 
   def team
   end
@@ -11,15 +13,14 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-=begin
-  def gossipdetails
-    @gossip = Gossip.find(params[:id])
-    @user = Gossip.find(params[:id]).user
-  end
-=end
+
+  # def gossipdetails
+  #   @gossip = Gossip.find(params[:id])
+  #   @user = Gossip.find(params[:id]).user
+  # end
 
 
-  def authordetails
-    @user = User.find(params[:id])
-  end
+  # def authordetails
+  #   @user = User.find(params[:id])
+  # end
 end
