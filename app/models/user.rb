@@ -12,7 +12,7 @@ class User < ApplicationRecord
   belongs_to :city
 
 
-  validates :password, presence: true, length: { minimum: 6 }
+  #validates :password, presence: true, length: { minimum: 6 }
   validates :email,
     presence: true,
     format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email address please" }
