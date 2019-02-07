@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   #has_secure_password
+  #attr_accessible :email, :password
+  attr_accessor :password
 
   has_many :sent_messages, foreign_key: 'sender_id', class_name: "PrivateMessage"
   has_many :join_table_user_private_messages

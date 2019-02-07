@@ -24,7 +24,7 @@
 
       <%= text_field_tag 'email', @user.email, class:'form-control', placeholder:"Email"  %>
       <br /> <br />
-      <%= password_field_tag 'password', @user.password_digest, class:'form-control', placeholder:"Mot de passe"  %>
+      <%= password_field_tag 'password', @user.password, class:'form-control', placeholder:"Mot de passe"  %>
       <br /> <br />
 
       <%= submit_tag "M'inscrire", class: "btn btn-outline-info btn-lg" %></br></br>
