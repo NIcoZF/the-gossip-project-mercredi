@@ -1,16 +1,11 @@
 <html>
-
-  <head>
-    <title>User</title>
-  </head>
-
   <body>
     <% if flash[:success] %>
     <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
     <% end %>
 
-  <div class="card border-info m-5">
-      <div class="card-header"><center>
+  <div class="card border-info m-5"><center>
+      <div class="card-header">
         <h1>Voici la liste des Ragots</h1>
 
   <main role="main" class="container"></br>
@@ -24,23 +19,27 @@
     <a href="/gossips/new" class="btn btn-outline-danger">New</a></br></br>
 
       <!-- containers gossips -->
-      <div class="container">
-        <div class="row">
-          <% @gossips.each do |gossip| %>
-            <div class="col-md-4">
-              <div class="card text-white bg-dark mb-3" style="width: 18rem;"><center>
-                <div class="card-body">
-                  <div class="card-body">
-                    <h5 class="text-info" class="card-title"><%= gossip.user.first_name %></h5>
-                    <p class="card-text"><b><%= gossip.title %></b></p>
-                    <a href="/gossips/<%= gossip.id %>" class="btn btn-outline-danger">Voir plus</a>
-                  </div>
+      <div class="d-flex flex-wrap">
+         <% @gossips.each do |gossip|%>
+        <div class="card p-2 m-2" style="width: 16rem;">
+          <div class="card-header">
+          <%= image_tag get_random_image, class: "card-img-top" %>
+          </div>
+          <div class="card-body">
+              <p class="card-text"></p>
+            <div class="card-body">
+              <h5 class="text-info" class="card-title"><%= gossip.user.first_name %></h5>
+                <p class="card-text"><b><%= gossip.title %></b></p>
+                <div class='card-footer'>
+                  <a href="/gossips/<%= gossip.id %>" class="btn btn-outline-danger fix-buttom ">Voir</a>
                 </div>
-              </div></br>
             </div>
-          <% end %>
+          </div>
         </div>
+      <%end%>
       </div>
     </main>
   </body>
 </html>
+
+

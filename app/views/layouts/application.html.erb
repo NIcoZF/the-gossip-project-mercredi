@@ -54,7 +54,7 @@
 
         <%else%>
         <div class="dropdown">
-          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CONNEXION</button>
+          <button class="btn btn-outline-info btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="/sessions/new">Log In</a>
               <a class="dropdown-item" href="/users/new">Sign Up</a>
@@ -63,25 +63,26 @@
 
         <%end%>
         </nav></br></br></br></br>
-    </header>
+      </header>
 
-
-    <main role="main" class="container"><center></br>
+<!--     <main role="main" class="container"><center></br>
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bienvenue <%= params[:id] %></font></font></h1>
           <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Voici notre super site de potins, il est chouette, non ? </font></br></br><font style="vertical-align: inherit;">Tu peux les checker si tu veux!.</font></font></p>
         </div>
       </div>
-    </main>
-    <%= yield %>
-  </body>
+    </main> -->
 
-  <footer class="page-footer fixed-bottum font-small bg-dark"><center>
+  </body>
+  <%= yield %>
+
+  <footer class="page-footer fixed-bottum font-small "><center>
     </br><div class="text-info" class="footer-copyright text-center py-3">© 2019 Copyright:
       <a href="https://mdbootstrap.com/education/bootstrap/" class="text-info"> Made with by Nico & Vincent </a>
     </div></br>
   </footer>
+
 
 </html>
 
